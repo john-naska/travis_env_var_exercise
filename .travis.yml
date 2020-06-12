@@ -14,10 +14,10 @@ before_script:
   - echo "no tests"
 
 script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker --version # print the version for logging
   - docker build -t travis_env_var_exercise:latest .
   - docker tag travis_env_var_exercise johnnaska/travis_env_var_exercise:latest
-  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push johnnaska/travis_env_var_exercise:latest
 
 # after_success:
