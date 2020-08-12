@@ -23,3 +23,5 @@ after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push johnnaska/travis_env_var_exercise:latest
 
+#deploy
+".travis.yml" 25L, 552C
